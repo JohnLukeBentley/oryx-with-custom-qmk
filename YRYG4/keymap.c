@@ -427,6 +427,9 @@ tap_dance_action_t tap_dance_actions[] = {
 const key_override_t forwardslash_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLASH, KC_LEFT_ANGLE_BRACKET);
 
 // All key overrides to be used
-const key_override_t **key_overrides[] =  (const key_override_t *[]){
-	&forwardslash_key_override
+const key_override_t *my_key_overrides[] = {
+	&forwardslash_key_override,
+  NULL
 };
+
+const key_override_t **key_overrides = my_key_overrides;
