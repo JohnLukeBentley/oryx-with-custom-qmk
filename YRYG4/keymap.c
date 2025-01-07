@@ -424,12 +424,18 @@ tap_dance_action_t tap_dance_actions[] = {
 
 
 // Custom QMK here
-const key_override_t forwardslash_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLASH, KC_LEFT_ANGLE_BRACKET);
+const key_override_t single_quote_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_QUOTE, KC_UNDERSCORE);
+const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_QUESTION);
+const key_override_t dot_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, KC_RIGHT_ANGLE_BRACKET);
+const key_override_t minus_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINUS, KC_DOUBLE_QUOTE);
+const key_override_t forward_slash_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLASH, KC_LEFT_ANGLE_BRACKET);
 
 // All key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
-  &forwardslash_key_override,
+  &single_quote_key_override,
+  &comma_key_override,
+  &dot_key_override,
+  &minus_key_override,
+  &forward_slash_key_override,
   NULL // Required as last item in array to prevent compile error
 };
-
-// const key_override_t **key_overrides = my_key_overrides;
