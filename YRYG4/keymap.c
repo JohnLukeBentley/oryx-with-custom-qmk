@@ -420,3 +420,12 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_5] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_5, dance_5_finished, dance_5_reset),
         [DANCE_6] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_6_finished, dance_6_reset),
 };
+
+
+
+// Custom QMK here
+const key_override_t forwardslash_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLASH, KC_LEFT_ANGLE_BRACKET);
+
+const key_override_t *key_overrides[] = {
+	&forwardslash_key_override
+};
