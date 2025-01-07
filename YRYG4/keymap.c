@@ -426,6 +426,7 @@ tap_dance_action_t tap_dance_actions[] = {
 // Custom QMK here
 const key_override_t forwardslash_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLASH, KC_LEFT_ANGLE_BRACKET);
 
-const key_override_t *key_overrides[] = {
+// All key overrides to be used
+const key_override_t **key_overrides[] =  (const key_override_t *[]){
 	&forwardslash_key_override
 };
