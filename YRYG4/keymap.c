@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         
     KC_TRANSPARENT, KC_UNDS,        KC_QUES,        KC_LCBR,        KC_COLN,        KC_GRAVE,                                       KC_EXLM,        KC_ASTR,        KC_RCBR,        KC_DLR,         KC_HASH,        KC_TRANSPARENT, 
-    KC_CIRC,        MT(MOD_LGUI, KC_QUOTE),TD(DANCE_0),    TD(DANCE_1),    MT(MOD_LCTL, KC_SLASH),KC_BSLS,                                        KC_PLUS,        MT(MOD_RCTL, KC_COMMA),MT(MOD_RSFT, KC_DOT),MT(MOD_LALT, KC_SCLN),TD(DANCE_2),    KC_TRANSPARENT, 
+    KC_TILD,        MT(MOD_LGUI, KC_QUOTE),TD(DANCE_0),    TD(DANCE_1),    MT(MOD_LCTL, KC_SLASH),KC_BSLS,                                        KC_PLUS,        MT(MOD_RCTL, KC_COMMA),MT(MOD_RSFT, KC_DOT),MT(MOD_LALT, KC_SCLN),TD(DANCE_2),    KC_CIRC,        
     KC_TRANSPARENT, KC_AT,          KC_LBRC,        KC_LPRN,        KC_EQUAL,       KC_PIPE,                                        KC_AMPR,        KC_MINUS,       KC_RPRN,        KC_RBRC,        KC_PERC,        KC_F12,         
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
