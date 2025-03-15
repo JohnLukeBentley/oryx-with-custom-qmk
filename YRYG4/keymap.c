@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_voyager(
     RGB_TOG,        TOGGLE_LAYER_COLOR,RGB_MODE_FORWARD,RGB_SLD,        RGB_VAD,        RGB_VAI,                                        KC_TRANSPARENT, KC_PSCR,        KC_SCRL,        KC_PAUSE,       QK_DYNAMIC_TAPPING_TERM_DOWN,QK_DYNAMIC_TAPPING_TERM_UP,
     RGB_HUI,        KC_TRANSPARENT, KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  KC_AUDIO_VOL_UP,RGB_SAI,                                        KC_TRANSPARENT, KC_HOME,        KC_TRANSPARENT, KC_END,         KC_PAGE_UP,     QK_DYNAMIC_TAPPING_TERM_PRINT,
-    RGB_HUD,        MT(MOD_LGUI, KC_MEDIA_PREV_TRACK),MT(MOD_LALT, KC_MEDIA_NEXT_TRACK),MT(MOD_LSFT, KC_MEDIA_STOP),MT(MOD_LCTL, KC_MEDIA_PLAY_PAUSE),RGB_SAD,                                        KC_INSERT,      MT(MOD_RCTL, KC_LEFT),MT(MOD_RSFT, KC_UP),MT(MOD_LALT, KC_RIGHT),KC_PGDN,        KC_TRANSPARENT, 
+    RGB_HUD,        MT(MOD_LGUI, KC_MEDIA_PREV_TRACK),MT(MOD_LALT, KC_MEDIA_NEXT_TRACK),MT(MOD_LSFT, KC_MEDIA_STOP),MT(MOD_LCTL, KC_MEDIA_PLAY_PAUSE),RGB_SAD,                                        KC_INSERT,      KC_LEFT,        KC_UP,          KC_RIGHT,       KC_PGDN,        KC_TRANSPARENT, 
     HSV_0_255_85,   KC_TRANSPARENT, KC_TRANSPARENT, HSV_0_255_255,  HSV_74_255_255, HSV_169_255_255,                                KC_TRANSPARENT, KC_DELETE,      KC_DOWN,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
@@ -58,6 +58,22 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, TG(3)),
 };
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case MT(MOD_LGUI, KC_N):
+            return g_tapping_term + 100;
+        case MT(MOD_RGUI, KC_I):
+            return g_tapping_term + 100;
+        case TD(DANCE_0):
+            return g_tapping_term + 100;
+        case TD(DANCE_3):
+            return g_tapping_term + 100;
+        case MT(MOD_LGUI, KC_MEDIA_PREV_TRACK):
+            return g_tapping_term + 100;
+        default:
+            return g_tapping_term;
+    }
+}
 
 extern rgb_config_t rgb_matrix_config;
 
