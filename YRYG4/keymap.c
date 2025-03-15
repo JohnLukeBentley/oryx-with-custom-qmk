@@ -58,22 +58,6 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, TG(3)),
 };
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case MT(MOD_LGUI, KC_N):
-            return 0;
-        case MT(MOD_RGUI, KC_I):
-            return 0;
-        case TD(DANCE_0):
-            return 0;
-        case TD(DANCE_3):
-            return 0;
-        case MT(MOD_LGUI, KC_MEDIA_PREV_TRACK):
-            return 0;
-        default:
-            return g_tapping_term;
-    }
-}
 
 extern rgb_config_t rgb_matrix_config;
 
