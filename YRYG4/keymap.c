@@ -441,16 +441,30 @@ tap_dance_action_t tap_dance_actions[] = {
 
 
 // Custom QMK here
-const key_override_t single_quote_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_QUOTE, KC_UNDERSCORE);
-const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_QUESTION);
-const key_override_t minus_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINUS, KC_DOUBLE_QUOTE);
-const key_override_t forward_slash_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLASH, KC_LEFT_ANGLE_BRACKET);
+
+bool led_update_user(led_t led_state) {
+  if (led_state.num_lock) {
+      // Num Lock ON: Set the color of specific key (example: Num Lock key is key 30)
+      rgb_matrix_set_color(30, 0, 255, 0); // Green when ON
+  } else {
+      // Num Lock OFF
+      rgb_matrix_set_color(30, 255, 0, 0); // Red when OFF
+  }
+  return true;
+}
+
+/* ## Key overrides */
+
+// const key_override_t single_quote_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_QUOTE, KC_UNDERSCORE);
+// const key_override_t comma_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_COMMA, KC_QUESTION);
+// const key_override_t minus_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_MINUS, KC_DOUBLE_QUOTE);
+// const key_override_t forward_slash_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLASH, KC_LEFT_ANGLE_BRACKET);
 
 // All key overrides to be used
-const key_override_t **key_overrides = (const key_override_t *[]){
-  &single_quote_key_override,
-  &comma_key_override,
-  &minus_key_override,
-  &forward_slash_key_override,
-  NULL // Required as last item in array to prevent compile error
-};
+// const key_override_t **key_overrides = (const key_override_t *[]){
+//   &single_quote_key_override,
+//   &comma_key_override,
+//   &minus_key_override,
+//   &forward_slash_key_override,
+//   NULL // Required as last item in array to prevent compile error
+// };
