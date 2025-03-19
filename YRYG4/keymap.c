@@ -442,15 +442,15 @@ tap_dance_action_t tap_dance_actions[] = {
 
 // Custom QMK here
 
-bool led_update_user(led_t led_state) {
-  // If Num Lock is active, set underglow to green
-  if (led_state.num_lock) {
-      rgblight_setrgb(0x00, 0xFF, 0x00);  // R=0, G=255, B=0
-  } else {
-      rgblight_setrgb(0xFF, 0x00, 0x00);  // R=255, G=0,   B=0
-  }
-  return true;
-}
+// bool led_update_user(led_t led_state) {
+//   // If Num Lock is active, set underglow to green
+//   if (led_state.num_lock) {
+//       rgblight_setrgb(0x00, 0xFF, 0x00);  // R=0, G=255, B=0
+//   } else {
+//       rgblight_setrgb(0xFF, 0x00, 0x00);  // R=255, G=0,   B=0
+//   }
+//   return true;
+// }
 
 
 /* ## Key overrides */
