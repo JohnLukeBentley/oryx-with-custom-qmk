@@ -443,15 +443,15 @@ tap_dance_action_t tap_dance_actions[] = {
 // Custom QMK here
 
 bool led_update_user(led_t led_state) {
+  // If Num Lock is active, set underglow to green
   if (led_state.num_lock) {
-      // Num Lock ON: Set the color of specific key (example: Num Lock key is key 30)
-      rgb_matrix_set_color(30, 0, 255, 0); // Green when ON
+      rgblight_setrgb(0x00, 0xFF, 0x00);  // R=0, G=255, B=0
   } else {
-      // Num Lock OFF
-      rgb_matrix_set_color(30, 255, 0, 0); // Red when OFF
+      rgblight_setrgb(0xFF, 0x00, 0x00);  // R=255, G=0,   B=0
   }
   return true;
 }
+
 
 /* ## Key overrides */
 
