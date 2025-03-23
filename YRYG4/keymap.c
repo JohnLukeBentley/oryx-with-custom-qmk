@@ -99,6 +99,20 @@ void set_layer_color(int layer) {
   }
 }
 
+// Custom code start ********************************
+#define CAPS_WORD_LED_INDEX 12
+#define SCROLL_LOCK_LED_INDEX 28
+#define NUM_LOCK_LED_INDEX 38
+
+// Single green color constant:
+#define LED_ON_R 0
+#define LED_ON_G 255
+#define LED_ON_B 0
+
+// Macro to quickly set the 'on' color:
+#define SET_LED_ON(i) rgb_matrix_set_color((i), LED_ON_R, LED_ON_G, LED_ON_B)
+// Custom code end   ********************************
+
 bool rgb_matrix_indicators_user(void) {
   if (rawhid_state.rgb_control) {
       return false;
@@ -107,10 +121,10 @@ bool rgb_matrix_indicators_user(void) {
   switch (biton32(layer_state)) {
     case 0:
       set_layer_color(0);
-
+ 
       // Custom code start ********************************
       if (caps_word_on) {
-        rgb_matrix_set_color(18, 0, 255, 0);     // green
+        SET_LED_ON(CAPS_WORD_LED_INDEX);
       }
       // Custom code end   ********************************
 
@@ -123,7 +137,7 @@ bool rgb_matrix_indicators_user(void) {
 
       // Custom code start ********************************
       if (host_keyboard_led_state().scroll_lock) {
-        rgb_matrix_set_color(8, 0, 255, 0);     // green
+        SET_LED_ON(SCROLL_LOCK_LED_INDEX);
       }
       // Custom code end   ********************************
 
@@ -133,7 +147,7 @@ bool rgb_matrix_indicators_user(void) {
 
       // Custom code start ********************************
       if (host_keyboard_led_state().num_lock) {
-        rgb_matrix_set_color(18, 0, 255, 0);     // green
+        SET_LED_ON(NUM_LOCK_LED_INDEX);
       }
       // Custom code end   ********************************
 
