@@ -476,7 +476,7 @@ tap_dance_action_t tap_dance_actions[] = {
 
 
 // Custom QMK here
-extern bool caps_word_on;
+
 
 // bool led_update_user(led_t led_state) {
 //   // If Num Lock is active, set underglow to green
