@@ -107,6 +107,13 @@ bool rgb_matrix_indicators_user(void) {
   switch (biton32(layer_state)) {
     case 0:
       set_layer_color(0);
+
+      // Custom code start ********************************
+      if (caps_word_on) {
+        rgb_matrix_set_color(18, 0, 255, 0);     // green
+      }
+      // Custom code end   ********************************
+
       break;
     case 1:
       set_layer_color(1);
@@ -123,6 +130,13 @@ bool rgb_matrix_indicators_user(void) {
       break;
     case 3:
       set_layer_color(3);
+
+      // Custom code start ********************************
+      if (host_keyboard_led_state().num_lock) {
+        rgb_matrix_set_color(18, 0, 255, 0);     // green
+      }
+      // Custom code end   ********************************
+
       break;
    default:
     if (rgb_matrix_get_flags() == LED_FLAG_NONE)
