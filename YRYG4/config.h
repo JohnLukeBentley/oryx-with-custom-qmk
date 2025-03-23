@@ -10,3 +10,10 @@
 
 #define RGB_MATRIX_STARTUP_SPD 60
 
+
+// Custom code
+// https://docs.qmk.fm/features/caps_word
+// CAPS_WORD_IDLE_TIMEOUT is 5 seconds by default
+// #define CAPS_WORD_IDLE_TIMEOUT 30000  // 30 seconds.
+#define CAPS_WORD_IDLE_TIMEOUT 0  // Caps Word to never time out. Caps Word then remains active indefinitely until a word breaking key is pressed.
+#define CAPS_WORD_INVERT_ON_SHIFT

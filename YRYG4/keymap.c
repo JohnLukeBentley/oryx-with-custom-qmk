@@ -532,3 +532,65 @@ tap_dance_action_t tap_dance_actions[] = {
 //   &forward_slash_key_override,
 //   NULL // Required as last item in array to prevent compile error
 // };
+
+
+// // Custom code start ********************************
+// #define CAPS_WORD_LED_INDEX 12
+// #define SCROLL_LOCK_LED_INDEX 28
+// #define NUM_LOCK_LED_INDEX 38
+
+// // Single green color constant:
+// #define LED_ON_R 0
+// #define LED_ON_G 255
+// #define LED_ON_B 0
+
+// // Macro to quickly set the 'on' color:
+// #define SET_LED_ON(i) rgb_matrix_set_color((i), LED_ON_R, LED_ON_G, LED_ON_B)
+// // Custom code end   ********************************
+
+// bool rgb_matrix_indicators_user(void) {
+//   if (rawhid_state.rgb_control) {
+//       return false;
+//   }
+//   if (keyboard_config.disable_layer_led) { return false; }
+//   switch (biton32(layer_state)) {
+//     case 0:
+//       set_layer_color(0);
+ 
+//       // Custom code start ********************************
+//       if (is_caps_word_on()) {
+//         SET_LED_ON(CAPS_WORD_LED_INDEX);
+//       }
+//       // Custom code end   ********************************
+
+//       break;
+//     case 1:
+//       set_layer_color(1);
+//       break;
+//     case 2:
+//       set_layer_color(2);
+
+//       // Custom code start ********************************
+//       if (host_keyboard_led_state().scroll_lock) {
+//         SET_LED_ON(SCROLL_LOCK_LED_INDEX);
+//       }
+//       // Custom code end   ********************************
+
+//       break;
+//     case 3:
+//       set_layer_color(3);
+
+//       // Custom code start ********************************
+//       if (host_keyboard_led_state().num_lock) {
+//         SET_LED_ON(NUM_LOCK_LED_INDEX);
+//       }
+//       // Custom code end   ********************************
+
+//       break;
+//    default:
+//     if (rgb_matrix_get_flags() == LED_FLAG_NONE)
+//       rgb_matrix_set_color_all(0, 0, 0);
+//     break;
+//   }
+//   return true;
+// }
