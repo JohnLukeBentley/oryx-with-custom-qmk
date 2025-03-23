@@ -123,7 +123,7 @@ bool rgb_matrix_indicators_user(void) {
       set_layer_color(0);
  
       // Custom code start ********************************
-      if (caps_word_on) {
+      if (is_caps_word_on()) {
         SET_LED_ON(CAPS_WORD_LED_INDEX);
       }
       // Custom code end   ********************************
