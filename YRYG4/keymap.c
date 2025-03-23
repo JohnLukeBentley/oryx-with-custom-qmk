@@ -113,6 +113,13 @@ bool rgb_matrix_indicators_user(void) {
       break;
     case 2:
       set_layer_color(2);
+
+      // Custom code start ********************************
+      if (host_keyboard_led_state().scroll_lock) {
+        rgb_matrix_set_color(8, 0, 255, 0);     // green
+      }
+      // Custom code end   ********************************
+
       break;
     case 3:
       set_layer_color(3);
@@ -469,6 +476,7 @@ tap_dance_action_t tap_dance_actions[] = {
 
 
 // Custom QMK here
+extern bool caps_word_on;
 
 // bool led_update_user(led_t led_state) {
 //   // If Num Lock is active, set underglow to green
