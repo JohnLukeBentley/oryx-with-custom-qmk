@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
-    TOGGLE_LAYER_COLOR,RGB_MODE_FORWARD,RGB_SPD,        RGB_SLD,        RGB_SPI,        RGB_TOG,                                        KC_NO,          KC_PSCR,        KC_SCRL,        KC_PAUSE,       QK_DYNAMIC_TAPPING_TERM_DOWN,QK_DYNAMIC_TAPPING_TERM_UP,
+    RGB_TOG,        RGB_MODE_FORWARD,RGB_SPD,        RGB_SLD,        RGB_SPI,        TOGGLE_LAYER_COLOR,                                KC_NO,          KC_PSCR,        KC_SCRL,        KC_PAUSE,       QK_DYNAMIC_TAPPING_TERM_DOWN,QK_DYNAMIC_TAPPING_TERM_UP,
     RGB_SAI,        RGB_HUI,        KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  KC_AUDIO_VOL_UP,RGB_VAI,                                        KC_NO,          KC_HOME,        KC_NO,          KC_END,         KC_PAGE_UP,     QK_DYNAMIC_TAPPING_TERM_PRINT,
     KC_NO,          MT(MOD_LGUI, KC_MEDIA_PREV_TRACK),MT(MOD_LALT, KC_J),MT(MOD_LSFT, KC_MEDIA_PLAY_PAUSE),MT(MOD_LCTL, KC_L),KC_MEDIA_NEXT_TRACK,                                KC_NO,          KC_LEFT,        KC_UP,          KC_RIGHT,       KC_PGDN,        KC_TRANSPARENT, 
     RGB_SAD,        RGB_HUI,        KC_COMMA,       HSV_0_255_255,  KC_DOT,         RGB_VAD,                                        KC_NO,          KC_INSERT,      KC_DOWN,        KC_DELETE,      KC_TRANSPARENT, KC_TRANSPARENT, 
