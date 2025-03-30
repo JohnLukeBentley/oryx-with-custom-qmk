@@ -102,7 +102,15 @@ void set_layer_color(int layer) {
 }
 
 // Custom code start ********************************
-#define CAPS_WORD_LED_INDEX 12
+// Voyager LED Index
+// 00 01 02 03 04 05  26 27 28 29 30 31
+// 06 07 08 09 10 11  32 33 34 35 36 37
+// 12 13 14 15 16 17  38 39 40 41 42 43
+// 18 19 20 21 22 23  44 45 46 47 48 49
+//              24     50?
+//               25   51? 
+
+#define CAPS_WORD_LED_INDEX 06
 #define SCROLL_LOCK_LED_INDEX 28
 #define NUM_LOCK_LED_INDEX 38
 
