@@ -151,16 +151,16 @@ bool rgb_matrix_indicators_user(void) {
       break;
     case 2:
       set_layer_color(2);
+      break;
+    case 3:
+      set_layer_color(3);
 
       // Custom code start ********************************
       if (host_keyboard_led_state().scroll_lock) {
         SET_LED_ON(SCROLL_LOCK_LED_INDEX);
       }
       // Custom code end   ********************************
-
-      break;
-    case 3:
-      set_layer_color(3);
+      
       break;
    default:
     if (rgb_matrix_get_flags() == LED_FLAG_NONE)
