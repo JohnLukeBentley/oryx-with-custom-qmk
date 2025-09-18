@@ -19,20 +19,20 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(3, KC_3)
-#define DUAL_FUNC_1 LT(2, KC_Q)
-#define DUAL_FUNC_2 LT(11, KC_7)
-#define DUAL_FUNC_3 LT(2, KC_E)
-#define DUAL_FUNC_4 LT(3, KC_V)
-#define DUAL_FUNC_5 LT(1, KC_F17)
-#define DUAL_FUNC_6 LT(13, KC_F22)
+#define DUAL_FUNC_0 LT(1, KC_J)
+#define DUAL_FUNC_1 LT(11, KC_T)
+#define DUAL_FUNC_2 LT(15, KC_O)
+#define DUAL_FUNC_3 LT(10, KC_F7)
+#define DUAL_FUNC_4 LT(2, KC_F23)
+#define DUAL_FUNC_5 LT(3, KC_7)
+#define DUAL_FUNC_6 LT(6, KC_A)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_TRANSPARENT, 
-    CW_TOGG,        KC_B,           KC_L,           KC_D,           KC_W,           KC_Z,                                           KC_MINUS,       KC_F,           KC_O,           KC_U,           KC_J,           KC_TRANSPARENT, 
-    KC_TRANSPARENT, MT(MOD_LGUI, KC_N),MT(MOD_LALT, KC_R),MT(MOD_LSFT, KC_T),MT(MOD_LCTL, KC_S),KC_G,                                           KC_Y,           MT(MOD_RCTL, KC_H),MT(MOD_RSFT, KC_A),MT(MOD_LALT, KC_E),MT(MOD_RGUI, KC_I),KC_QUOTE,       
-    KC_LEFT_CTRL,   KC_Q,           KC_X,           KC_M,           KC_C,           KC_V,                                           KC_K,           KC_P,           KC_COMMA,       KC_DOT,         KC_EQUAL,       KC_DELETE,      
+    CW_TOGG,        KC_B,           KC_L,           KC_D,           KC_W,           KC_Z,                                           KC_QUOTE,       KC_F,           KC_O,           KC_U,           KC_J,           KC_TRANSPARENT, 
+    KC_TRANSPARENT, MT(MOD_LGUI, KC_N),MT(MOD_LALT, KC_R),MT(MOD_LSFT, KC_T),MT(MOD_LCTL, KC_S),KC_G,                                           KC_Y,           MT(MOD_RCTL, KC_H),MT(MOD_RSFT, KC_A),MT(MOD_LALT, KC_E),MT(MOD_RGUI, KC_I),KC_DQUO,        
+    KC_LEFT_CTRL,   KC_Q,           KC_X,           KC_M,           KC_C,           KC_V,                                           KC_K,           KC_P,           KC_COMMA,       KC_DOT,         KC_MINUS,       KC_DELETE,      
                                                     LT(2, KC_BSPC), LT(3, KC_TAB),                                  LT(3, KC_ENTER),LT(2, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         
     ST_MACRO_3,     KC_EXLM,        KC_AT,          KC_HASH,        KC_DLR,         KC_PERC,                                        KC_CIRC,        KC_AMPR,        KC_ASTR,        KC_UNDS,        KC_TILD,        ST_MACRO_6,     
     ST_MACRO_4,     DUAL_FUNC_1,    DUAL_FUNC_2,    MT(MOD_LSFT, KC_SLASH),DUAL_FUNC_3,    KC_GRAVE,                                       KC_PLUS,        DUAL_FUNC_4,    DUAL_FUNC_5,    MT(MOD_LALT, KC_SCLN),DUAL_FUNC_6,    KC_TRANSPARENT, 
-    KC_TRANSPARENT, ST_MACRO_5,     KC_LBRC,        KC_LCBR,        KC_BSLS,        KC_PIPE,                                        KC_NO,          KC_DQUO,        KC_RCBR,        KC_RBRC,        KC_TRANSPARENT, KC_F12,         
+    KC_TRANSPARENT, ST_MACRO_5,     KC_LBRC,        KC_LCBR,        KC_BSLS,        KC_PIPE,                                        KC_NO,          KC_EQUAL,       KC_RCBR,        KC_RBRC,        KC_TRANSPARENT, KC_F12,         
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
