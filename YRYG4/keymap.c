@@ -147,36 +147,40 @@ bool rgb_matrix_indicators_user(void) {
       case 0:
         set_layer_color(0);
 
-      // Custom code start ********************************
-      if (is_caps_word_on()) {
-        SET_LED_ON(CAPS_WORD_LED_INDEX);
-      }
-      // Custom code end   ********************************
+        // Custom code start ********************************
+        if (is_caps_word_on()) {
+          SET_LED_ON(CAPS_WORD_LED_INDEX);
+        }
+        // Custom code end   ********************************
         break;
+
       case 1:
         set_layer_color(1);
 
-      // Custom code start ********************************
-      if (host_keyboard_led_state().num_lock) {
-        SET_LED_ON(NUM_LOCK_LED_INDEX);
-      }
-      // Custom code end   ********************************
+        // Custom code start ********************************
+        if (host_keyboard_led_state().num_lock) {
+          SET_LED_ON(NUM_LOCK_LED_INDEX);
+        }
+        // Custom code end   ********************************
         break;
+
       case 2:
         set_layer_color(2);
         break;
+
       case 3:
         set_layer_color(3);
-
-      // Custom code start ********************************
-      if (host_keyboard_led_state().scroll_lock) {
-        SET_LED_ON(SCROLL_LOCK_LED_INDEX);
-      }
-      // Custom code end   ************
         break;
+
       case 4:
         set_layer_color(4);
+        // Custom code start ********************************
+        if (host_keyboard_led_state().scroll_lock) {
+          SET_LED_ON(SCROLL_LOCK_LED_INDEX);
+        }
+        // Custom code end   ********************************
         break;
+
      default:
         if (rgb_matrix_get_flags() == LED_FLAG_NONE) {
           rgb_matrix_set_color_all(0, 0, 0);
