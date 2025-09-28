@@ -126,6 +126,7 @@ void set_layer_color(int layer) {
 //               25   51? 
 
 #define CAPS_WORD_LED_INDEX 06
+#define CAPS_LOCK_LED_INDEX 26
 #define SCROLL_LOCK_LED_INDEX 28
 #define NUM_LOCK_LED_INDEX 38
 
@@ -175,6 +176,9 @@ bool rgb_matrix_indicators_user(void) {
       case 4:
         set_layer_color(4);
         // Custom code start ********************************
+        if (host_keyboard_led_state().caps_lock) {
+          SET_LED_ON(CAPS_LOCK_LED_INDEX);
+        }
         if (host_keyboard_led_state().scroll_lock) {
           SET_LED_ON(SCROLL_LOCK_LED_INDEX);
         }
