@@ -18,20 +18,20 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(3, KC_Q)
-#define DUAL_FUNC_1 LT(1, KC_F20)
-#define DUAL_FUNC_2 LT(6, KC_D)
-#define DUAL_FUNC_3 LT(9, KC_F15)
-#define DUAL_FUNC_4 LT(5, KC_F24)
-#define DUAL_FUNC_5 LT(13, KC_J)
-#define DUAL_FUNC_6 LT(10, KC_0)
+#define DUAL_FUNC_0 LT(15, KC_7)
+#define DUAL_FUNC_1 LT(5, KC_I)
+#define DUAL_FUNC_2 LT(15, KC_6)
+#define DUAL_FUNC_3 LT(13, KC_F8)
+#define DUAL_FUNC_4 LT(15, KC_F1)
+#define DUAL_FUNC_5 LT(15, KC_X)
+#define DUAL_FUNC_6 LT(6, KC_O)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,       
     CW_TOGG,        KC_B,           KC_L,           LT(3, KC_D),    KC_W,           KC_Z,                                           KC_MINUS,       KC_F,           KC_O,           KC_U,           KC_J,           KC_EQUAL,       
     KC_DQUO,        MT(MOD_LGUI, KC_N),MT(MOD_LALT, KC_R),MT(MOD_LSFT, KC_T),MT(MOD_LCTL, KC_S),KC_G,                                           KC_Y,           MT(MOD_RCTL, KC_H),MT(MOD_RSFT, KC_A),MT(MOD_LALT, KC_E),MT(MOD_RGUI, KC_I),KC_QUOTE,       
-    KC_LEFT_CTRL,   KC_Q,           KC_X,           LT(3, KC_M),    KC_C,           KC_V,                                           KC_K,           KC_P,           KC_COMMA,       KC_DOT,         KC_EQUAL,       KC_DELETE,      
+    KC_LEFT_CTRL,   KC_Q,           KC_X,           LT(3, KC_M),    KC_C,           KC_V,                                           KC_K,           KC_P,           KC_COMMA,       KC_DOT,         KC_MINUS,       KC_DELETE,      
                                                     LT(2, KC_BSPC), LT(4, KC_TAB),                                  LT(4, KC_ENTER),LT(2, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
