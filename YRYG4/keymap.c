@@ -18,13 +18,13 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(14, KC_U)
-#define DUAL_FUNC_1 LT(11, KC_H)
-#define DUAL_FUNC_2 LT(9, KC_M)
-#define DUAL_FUNC_3 LT(2, KC_F12)
-#define DUAL_FUNC_4 LT(7, KC_G)
-#define DUAL_FUNC_5 LT(6, KC_L)
-#define DUAL_FUNC_6 LT(9, KC_S)
+#define DUAL_FUNC_0 LT(15, KC_F9)
+#define DUAL_FUNC_1 LT(13, KC_E)
+#define DUAL_FUNC_2 LT(11, KC_T)
+#define DUAL_FUNC_3 LT(6, KC_F24)
+#define DUAL_FUNC_4 LT(12, KC_6)
+#define DUAL_FUNC_5 LT(2, KC_W)
+#define DUAL_FUNC_6 LT(11, KC_C)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RGB_TOG,        RGB_MODE_FORWARD,RGB_SPD,        RGB_SLD,        RGB_SPI,        TOGGLE_LAYER_COLOR,                                KC_CAPS,        KC_PSCR,        KC_SCRL,        KC_PAUSE,       QK_DYNAMIC_TAPPING_TERM_DOWN,QK_DYNAMIC_TAPPING_TERM_UP,
     RGB_SAI,        RGB_HUI,        KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  KC_AUDIO_VOL_UP,RGB_VAI,                                        KC_NO,          KC_HOME,        KC_NO,          KC_END,         KC_PAGE_UP,     QK_DYNAMIC_TAPPING_TERM_PRINT,
     KC_NO,          MT(MOD_LGUI, KC_MEDIA_PREV_TRACK),MT(MOD_LALT, KC_J),MT(MOD_LSFT, KC_MEDIA_PLAY_PAUSE),MT(MOD_LCTL, KC_L),KC_MEDIA_NEXT_TRACK,                                KC_NO,          KC_LEFT,        KC_UP,          KC_RIGHT,       KC_PGDN,        KC_NO,          
-    RGB_SAD,        RGB_HUI,        KC_COMMA,       HSV_0_255_255,  KC_DOT,         RGB_VAD,                                        KC_NO,          KC_INSERT,      KC_DOWN,        KC_DELETE,      KC_NO,          KC_NO,          
+    RGB_SAD,        RGB_HUI,        KC_COMMA,       HSV_0_255_255,  KC_DOT,         RGB_VAD,                                        KC_NO,          KC_DELETE,      KC_DOWN,        KC_INSERT,      KC_NO,          KC_NO,          
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
