@@ -252,16 +252,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
     case DUAL_FUNC_2:
       if (record->tap.count > 0) {
-        // if (record->event.pressed) {
-        //   register_code16(KC_LABK);
-        // } else {
-        //   unregister_code16(KC_LABK);
-        // }
-        
-        // Custom code for "<"
-        // Tap: send Unicode "<"
         if (record->event.pressed) {
-          send_unicode_string("\u003C");
+          register_code16(KC_LABK);
+        } else {
+          unregister_code16(KC_LABK);
         }
       } else {
         if (record->event.pressed) {
