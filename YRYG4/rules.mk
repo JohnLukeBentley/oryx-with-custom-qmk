@@ -8,5 +8,5 @@ CAPS_WORD_ENABLE = yes
 COMBO_ENABLE = yes
 DYNAMIC_TAPPING_TERM_ENABLE = yes
 
-// Custom code for "<"
+# Custom code for "<"
 UNICODE_ENABLE = yes

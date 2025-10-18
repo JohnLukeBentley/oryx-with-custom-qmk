@@ -258,6 +258,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         //   unregister_code16(KC_LABK);
         // }
         
+        // Custom code for "<"
         // Tap: send Unicode "<"
         if (record->event.pressed) {
           send_unicode_string("\u003C");
