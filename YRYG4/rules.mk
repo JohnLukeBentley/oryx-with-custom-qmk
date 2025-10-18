@@ -7,3 +7,6 @@ SPACE_CADET_ENABLE = no
 CAPS_WORD_ENABLE = yes
 COMBO_ENABLE = yes
 DYNAMIC_TAPPING_TERM_ENABLE = yes
+
+// Custom code for "<"
+UNICODE_ENABLE = yes
