@@ -17,12 +17,12 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(13, KC_F23)
-#define DUAL_FUNC_1 LT(11, KC_T)
-#define DUAL_FUNC_2 LT(3, KC_F10)
-#define DUAL_FUNC_3 LT(8, KC_K)
-#define DUAL_FUNC_4 LT(11, KC_F1)
-#define DUAL_FUNC_5 LT(1, KC_F22)
+#define DUAL_FUNC_0 LT(1, KC_F6)
+#define DUAL_FUNC_1 LT(14, KC_7)
+#define DUAL_FUNC_2 LT(13, KC_L)
+#define DUAL_FUNC_3 LT(10, KC_F9)
+#define DUAL_FUNC_4 LT(1, KC_F1)
+#define DUAL_FUNC_5 LT(2, KC_S)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -172,12 +172,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_3:
     if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_6) SS_TAP(X_KP_9) ));
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_5) SS_TAP(X_KP_3) ));
     }
     break;
     case ST_MACRO_4:
     if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_5) SS_TAP(X_KP_3) ));
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_1) SS_TAP(X_KP_0) SS_TAP(X_KP_0) SS_TAP(X_KP_0) SS_TAP(X_KP_3) ));
     }
     break;
 
@@ -190,9 +190,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_code16(KC_LEFT_GUI);
+          register_mods(MOD_LGUI);
         } else {
-          unregister_code16(KC_LEFT_GUI);
+          unregister_mods(MOD_LGUI);
         }  
       }  
       return false;
@@ -205,9 +205,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_code16(KC_LEFT_GUI);
+          register_mods(MOD_LGUI);
         } else {
-          unregister_code16(KC_LEFT_GUI);
+          unregister_mods(MOD_LGUI);
         }  
       }  
       return false;
@@ -220,9 +220,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_code16(KC_LEFT_ALT);
+          register_mods(MOD_LALT);
         } else {
-          unregister_code16(KC_LEFT_ALT);
+          unregister_mods(MOD_LALT);
         }  
       }  
       return false;
@@ -235,9 +235,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_code16(KC_LEFT_CTRL);
+          register_mods(MOD_LCTL);
         } else {
-          unregister_code16(KC_LEFT_CTRL);
+          unregister_mods(MOD_LCTL);
         }  
       }  
       return false;
@@ -250,9 +250,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_code16(KC_RIGHT_CTRL);
+          register_mods(MOD_RCTL);
         } else {
-          unregister_code16(KC_RIGHT_CTRL);
+          unregister_mods(MOD_RCTL);
         }  
       }  
       return false;
@@ -265,9 +265,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_code16(KC_RIGHT_SHIFT);
+          register_mods(MOD_RSFT);
         } else {
-          unregister_code16(KC_RIGHT_SHIFT);
+          unregister_mods(MOD_RSFT);
         }  
       }  
       return false;
