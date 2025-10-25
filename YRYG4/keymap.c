@@ -17,17 +17,16 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(3, KC_F24)
-#define DUAL_FUNC_1 LT(3, KC_F5)
-#define DUAL_FUNC_2 LT(8, KC_F2)
-#define DUAL_FUNC_3 LT(13, KC_K)
-#define DUAL_FUNC_4 LT(4, KC_K)
-#define DUAL_FUNC_5 LT(2, KC_1)
+#define DUAL_FUNC_0 LT(2, KC_Y)
+#define DUAL_FUNC_1 LT(1, KC_F22)
+#define DUAL_FUNC_2 LT(5, KC_F23)
+#define DUAL_FUNC_3 LT(13, KC_C)
+#define DUAL_FUNC_4 LT(3, KC_8)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_DOT,         
-    CW_TOGG,        KC_B,           KC_L,           LT(3, KC_D),    KC_W,           KC_Z,                                           KC_MINUS,       KC_F,           KC_O,           KC_U,           KC_J,           KC_DELETE,      
+    CW_TOGG,        KC_B,           KC_L,           LT(3, KC_D),    KC_W,           KC_Z,                                           KC_COLN,        KC_F,           KC_O,           KC_U,           KC_J,           KC_DELETE,      
     KC_DQUO,        MT(MOD_LGUI, KC_N),MT(MOD_LALT, KC_R),MT(MOD_LSFT, KC_T),MT(MOD_LCTL, KC_S),KC_G,                                           KC_Y,           MT(MOD_RCTL, KC_H),MT(MOD_RSFT, KC_A),MT(MOD_LALT, KC_E),MT(MOD_RGUI, KC_I),KC_QUOTE,       
     KC_LEFT_CTRL,   KC_Q,           KC_X,           KC_M,           KC_C,           KC_V,                                           KC_K,           KC_P,           KC_COMMA,       KC_DOT,         KC_BSLS,        KC_F5,          
                                                     LT(2, KC_BSPC), LT(4, KC_TAB),                                  LT(4, KC_ENTER),LT(2, KC_SPACE)
@@ -42,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         
     KC_NO,          KC_EXLM,        KC_AT,          KC_HASH,        KC_DLR,         KC_PERC,                                        KC_TRANSPARENT, KC_AMPR,        KC_ASTR,        KC_UNDS,        KC_TILD,        KC_TRANSPARENT, 
-    KC_RBRC,        DUAL_FUNC_1,    DUAL_FUNC_2,    MT(MOD_LSFT, KC_SLASH),DUAL_FUNC_3,    KC_GRAVE,                                       KC_PIPE,        DUAL_FUNC_4,    DUAL_FUNC_5,    MT(MOD_LALT, KC_SCLN),MT(MOD_RGUI, KC_QUOTE),KC_LBRC,        
+    KC_RBRC,        DUAL_FUNC_1,    DUAL_FUNC_2,    MT(MOD_LSFT, KC_SLASH),DUAL_FUNC_3,    KC_GRAVE,                                       KC_PIPE,        DUAL_FUNC_4,    MT(MOD_RSFT, KC_MINUS),MT(MOD_LALT, KC_SCLN),MT(MOD_RGUI, KC_QUOTE),KC_LBRC,        
     KC_TRANSPARENT, KC_CIRC,        KC_PLUS,        KC_RCBR,        KC_RPRN,        ST_MACRO_3,                                     ST_MACRO_4,     KC_LPRN,        KC_LCBR,        KC_EQUAL,       KC_TRANSPARENT, KC_F12,         
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
@@ -238,9 +237,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_mods(MOD_LGUI);
+          register_code16(KC_LEFT_GUI);
         } else {
-          unregister_mods(MOD_LGUI);
+          unregister_code16(KC_LEFT_GUI);
         }  
       }  
       return false;
@@ -253,9 +252,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_mods(MOD_LGUI);
+          register_code16(KC_LEFT_GUI);
         } else {
-          unregister_mods(MOD_LGUI);
+          unregister_code16(KC_LEFT_GUI);
         }  
       }  
       return false;
@@ -268,9 +267,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_mods(MOD_LALT);
+          register_code16(KC_LEFT_ALT);
         } else {
-          unregister_mods(MOD_LALT);
+          unregister_code16(KC_LEFT_ALT);
         }  
       }  
       return false;
@@ -283,9 +282,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_mods(MOD_LCTL);
+          register_code16(KC_LEFT_CTRL);
         } else {
-          unregister_mods(MOD_LCTL);
+          unregister_code16(KC_LEFT_CTRL);
         }  
       }  
       return false;
@@ -298,24 +297,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_mods(MOD_RCTL);
+          register_code16(KC_RIGHT_CTRL);
         } else {
-          unregister_mods(MOD_RCTL);
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_5:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(KC_COLN);
-        } else {
-          unregister_code16(KC_COLN);
-        }
-      } else {
-        if (record->event.pressed) {
-          register_mods(MOD_RSFT);
-        } else {
-          unregister_mods(MOD_RSFT);
+          unregister_code16(KC_RIGHT_CTRL);
         }  
       }  
       return false;
