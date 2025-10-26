@@ -17,18 +17,19 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(2, KC_Y)
-#define DUAL_FUNC_1 LT(1, KC_F22)
-#define DUAL_FUNC_2 LT(5, KC_F23)
-#define DUAL_FUNC_3 LT(13, KC_C)
-#define DUAL_FUNC_4 LT(3, KC_8)
+#define DUAL_FUNC_0 LT(13, KC_V)
+#define DUAL_FUNC_1 LT(6, KC_H)
+#define DUAL_FUNC_2 LT(14, KC_T)
+#define DUAL_FUNC_3 LT(2, KC_K)
+#define DUAL_FUNC_4 LT(7, KC_F23)
+#define DUAL_FUNC_5 LT(1, KC_V)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_DOT,         
     CW_TOGG,        KC_B,           KC_L,           LT(3, KC_D),    KC_W,           KC_Z,                                           KC_COLN,        KC_F,           KC_O,           KC_U,           KC_J,           KC_DELETE,      
     KC_DQUO,        MT(MOD_LGUI, KC_N),MT(MOD_LALT, KC_R),MT(MOD_LSFT, KC_T),MT(MOD_LCTL, KC_S),KC_G,                                           KC_Y,           MT(MOD_RCTL, KC_H),MT(MOD_RSFT, KC_A),MT(MOD_LALT, KC_E),MT(MOD_RGUI, KC_I),KC_QUOTE,       
-    KC_LEFT_CTRL,   KC_Q,           KC_X,           KC_M,           KC_C,           KC_V,                                           KC_K,           KC_P,           KC_COMMA,       KC_DOT,         KC_BSLS,        KC_F5,          
+    MO(3),          KC_Q,           KC_X,           KC_M,           KC_C,           KC_V,                                           KC_K,           KC_P,           KC_COMMA,       KC_DOT,         KC_BSLS,        KC_F5,          
                                                     LT(2, KC_BSPC), LT(4, KC_TAB),                                  LT(4, KC_ENTER),LT(2, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
@@ -47,9 +48,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_F),     LCTL(KC_H),                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_A),     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_MINUS,       KC_0,           KC_EQUAL,       KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_A),     LCTL(KC_Z),                                     KC_TRANSPARENT, KC_MINUS,       KC_0,           KC_EQUAL,       KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, LCTL(KC_X),     LCTL(KC_C),     LCTL(KC_V),     DUAL_FUNC_5,    LCTL(KC_Y),                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_D),     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [4] = LAYOUT_voyager(
@@ -300,6 +301,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           register_code16(KC_RIGHT_CTRL);
         } else {
           unregister_code16(KC_RIGHT_CTRL);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_5:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_S));
+        } else {
+          unregister_code16(LCTL(KC_S));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_LEFT_CTRL);
+        } else {
+          unregister_code16(KC_LEFT_CTRL);
         }  
       }  
       return false;
