@@ -17,12 +17,12 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(13, KC_V)
-#define DUAL_FUNC_1 LT(6, KC_H)
-#define DUAL_FUNC_2 LT(14, KC_T)
-#define DUAL_FUNC_3 LT(2, KC_K)
-#define DUAL_FUNC_4 LT(7, KC_F23)
-#define DUAL_FUNC_5 LT(1, KC_V)
+#define DUAL_FUNC_0 LT(1, KC_8)
+#define DUAL_FUNC_1 LT(15, KC_P)
+#define DUAL_FUNC_2 LT(14, KC_P)
+#define DUAL_FUNC_3 LT(12, KC_M)
+#define DUAL_FUNC_4 LT(13, KC_E)
+#define DUAL_FUNC_5 LT(3, KC_F11)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -49,8 +49,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_F),     LCTL(KC_H),                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_A),     LCTL(KC_Z),                                     KC_TRANSPARENT, KC_MINUS,       KC_0,           KC_EQUAL,       KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, LCTL(KC_X),     LCTL(KC_C),     LCTL(KC_V),     DUAL_FUNC_5,    LCTL(KC_Y),                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_D),     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_X),     LCTL(KC_C),     DUAL_FUNC_5,    LCTL(KC_Y),                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_D),     LCTL(KC_S),     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [4] = LAYOUT_voyager(
@@ -259,9 +259,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DUAL_FUNC_5:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
-          register_code16(LCTL(KC_S));
+          register_code16(LCTL(KC_V));
         } else {
-          unregister_code16(LCTL(KC_S));
+          unregister_code16(LCTL(KC_V));
         }
       } else {
         if (record->event.pressed) {
