@@ -17,16 +17,16 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(5, KC_7)
-#define DUAL_FUNC_1 LT(5, KC_F21)
-#define DUAL_FUNC_2 LT(10, KC_F10)
-#define DUAL_FUNC_3 LT(5, KC_F16)
-#define DUAL_FUNC_4 LT(3, KC_E)
+#define DUAL_FUNC_0 LT(3, KC_F24)
+#define DUAL_FUNC_1 LT(6, KC_F18)
+#define DUAL_FUNC_2 LT(7, KC_F6)
+#define DUAL_FUNC_3 LT(1, KC_Q)
+#define DUAL_FUNC_4 LT(8, KC_F5)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_DOT,         
-    CW_TOGG,        KC_B,           KC_L,           KC_D,           KC_W,           KC_Z,                                           KC_PIPE,        KC_F,           KC_O,           KC_U,           KC_J,           KC_DELETE,      
+    CW_TOGG,        KC_B,           KC_L,           KC_D,           KC_W,           KC_Z,                                           KC_UNDS,        KC_F,           KC_O,           KC_U,           KC_J,           KC_DELETE,      
     MO(3),          MT(MOD_LGUI, KC_N),MT(MOD_LALT, KC_R),MT(MOD_LSFT, KC_T),MT(MOD_LCTL, KC_S),KC_G,                                           KC_Y,           MT(MOD_RCTL, KC_H),MT(MOD_RSFT, KC_A),MT(MOD_LALT, KC_E),MT(MOD_RGUI, KC_I),KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_Q,           KC_X,           KC_M,           KC_C,           KC_V,                                           KC_K,           KC_P,           KC_COMMA,       KC_DOT,         KC_BSLS,        KC_F5,          
                                                     LT(2, KC_BSPC), LT(4, KC_TAB),                                  LT(4, KC_ENTER),LT(2, KC_SPACE)
@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         
     KC_NO,          KC_EXLM,        KC_AT,          KC_HASH,        KC_DLR,         KC_PERC,                                        KC_TRANSPARENT, KC_AMPR,        KC_COLN,        KC_ASTR,        KC_TILD,        KC_TRANSPARENT, 
-    KC_RBRC,        DUAL_FUNC_1,    DUAL_FUNC_2,    MT(MOD_LSFT, KC_SLASH),DUAL_FUNC_3,    KC_GRAVE,                                       KC_UNDS,        DUAL_FUNC_4,    MT(MOD_RSFT, KC_MINUS),MT(MOD_LALT, KC_SCLN),MT(MOD_RGUI, KC_QUOTE),KC_LBRC,        
+    KC_RBRC,        DUAL_FUNC_1,    DUAL_FUNC_2,    MT(MOD_LSFT, KC_SLASH),DUAL_FUNC_3,    KC_GRAVE,                                       KC_PIPE,        DUAL_FUNC_4,    MT(MOD_RSFT, KC_MINUS),MT(MOD_LALT, KC_SCLN),MT(MOD_RGUI, KC_QUOTE),KC_LBRC,        
     KC_TRANSPARENT, KC_CIRC,        KC_PLUS,        KC_RCBR,        KC_RPRN,        ST_MACRO_3,                                     ST_MACRO_4,     KC_LPRN,        KC_LCBR,        KC_EQUAL,       KC_TRANSPARENT, KC_F12,         
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
