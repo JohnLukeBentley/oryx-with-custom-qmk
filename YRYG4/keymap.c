@@ -144,20 +144,23 @@ bool rgb_matrix_indicators_user(void) {
     switch (biton32(layer_state)) {
       case 0:
         set_layer_color(0);
+
         // Custom code start ********************************
         if (is_caps_word_on()) {
           SET_LED_ON(CAPS_WORD_LED_INDEX);
         }
         // Custom code end   ********************************
+
         break;
       case 1:
-
         set_layer_color(1);
+
         // Custom code start ********************************
         if (host_keyboard_led_state().num_lock) {
           SET_LED_ON(NUM_LOCK_LED_INDEX);
         }
-        // Custom code end   ********************************      
+        // Custom code end   ********************************   
+
         break;
       case 2:
         set_layer_color(2);
@@ -175,7 +178,8 @@ bool rgb_matrix_indicators_user(void) {
         if (host_keyboard_led_state().scroll_lock) {
           SET_LED_ON(SCROLL_LOCK_LED_INDEX);
         }
-        // Custom code end   ********************************        
+        // Custom code end   ********************************    
+            
         break;
      default:
         if (rgb_matrix_get_flags() == LED_FLAG_NONE) {
