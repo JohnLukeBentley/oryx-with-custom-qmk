@@ -17,7 +17,7 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(10, KC_M)
+#define DUAL_FUNC_0 LT(1, KC_M)
 #define DUAL_FUNC_1 LT(4, KC_P)
 #define DUAL_FUNC_2 LT(11, KC_G)
 #define DUAL_FUNC_3 LT(9, KC_F7)
@@ -71,12 +71,6 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 
-bool numlock_active = false;
-
-bool led_update_user(led_t led_state) {
-  numlock_active = led_state.num_lock;
-  return true;
-}
 
 extern rgb_config_t rgb_matrix_config;
 
@@ -199,13 +193,6 @@ bool rgb_matrix_indicators_user(void) {
     }
   }
 
-  // John Bentley's note start *****************************
-  // This is how ZSA does it for num lock on layer 1. My code happens to override.
-  if (numlock_active && biton32(layer_state) == 1) {
-    RGB rgb = hsv_to_rgb_with_value((HSV) { 198, 218, 204 });
-    rgb_matrix_set_color( 38, rgb.r, rgb.g, rgb.b );
-  } 
-  // John Bentley's note end *****************************
   return true;
 }
 
