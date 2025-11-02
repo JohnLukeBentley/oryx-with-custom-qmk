@@ -152,12 +152,12 @@ bool rgb_matrix_indicators_user(void) {
         break;
       case 1:
 
+        set_layer_color(1);
         // Custom code start ********************************
         if (host_keyboard_led_state().num_lock) {
           SET_LED_ON(NUM_LOCK_LED_INDEX);
         }
         // Custom code end   ********************************      
-        set_layer_color(1);
         break;
       case 2:
         set_layer_color(2);
