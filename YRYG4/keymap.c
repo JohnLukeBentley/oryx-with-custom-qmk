@@ -199,10 +199,13 @@ bool rgb_matrix_indicators_user(void) {
     }
   }
 
+  // John Bentley's note start *****************************
+  // This is how ZSA does it for num lock on layer 1. My code happens to override.
   if (numlock_active && biton32(layer_state) == 1) {
     RGB rgb = hsv_to_rgb_with_value((HSV) { 198, 218, 204 });
     rgb_matrix_set_color( 38, rgb.r, rgb.g, rgb.b );
   } 
+  // John Bentley's note end *****************************
   return true;
 }
 
