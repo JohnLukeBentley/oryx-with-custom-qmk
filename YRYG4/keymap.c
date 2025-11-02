@@ -17,11 +17,11 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(10, KC_M)
-#define DUAL_FUNC_1 LT(4, KC_P)
-#define DUAL_FUNC_2 LT(11, KC_G)
-#define DUAL_FUNC_3 LT(9, KC_F7)
-#define DUAL_FUNC_4 LT(13, KC_F21)
+#define DUAL_FUNC_0 LT(1, KC_S)
+#define DUAL_FUNC_1 LT(1, KC_H)
+#define DUAL_FUNC_2 LT(2, KC_S)
+#define DUAL_FUNC_3 LT(3, KC_F10)
+#define DUAL_FUNC_4 LT(12, KC_G)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -71,12 +71,6 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 
-bool numlock_active = false;
-
-bool led_update_user(led_t led_state) {
-  numlock_active = led_state.num_lock;
-  return true;
-}
 
 extern rgb_config_t rgb_matrix_config;
 
@@ -151,10 +145,6 @@ bool rgb_matrix_indicators_user(void) {
     }
   }
 
-  if (numlock_active && biton32(layer_state) == 1) {
-    RGB rgb = hsv_to_rgb_with_value((HSV) { 198, 218, 204 });
-    rgb_matrix_set_color( 38, rgb.r, rgb.g, rgb.b );
-  } 
   return true;
 }
 
