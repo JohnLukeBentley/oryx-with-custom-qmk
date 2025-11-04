@@ -195,10 +195,6 @@ bool rgb_matrix_indicators_user(void) {
   return true;
 }
 
-
-
-
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case ST_MACRO_0:
