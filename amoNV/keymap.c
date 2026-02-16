@@ -113,6 +113,29 @@ void set_layer_color(int layer) {
   }
 }
 
+// Custom code start ********************************
+// Voyager LED Index
+// 00 01 02 03 04 05  26 27 28 29 30 31
+// 06 07 08 09 10 11  32 33 34 35 36 37
+// 12 13 14 15 16 17  38 39 40 41 42 43
+// 18 19 20 21 22 23  44 45 46 47 48 49
+//              24     50?
+//               25   51? 
+
+#define CAPS_WORD_LED_INDEX 06
+#define CAPS_LOCK_LED_INDEX 26
+#define SCROLL_LOCK_LED_INDEX 28
+#define NUM_LOCK_LED_INDEX 38
+
+// Single green color constant:
+#define LED_ON_R 0
+#define LED_ON_G 255
+#define LED_ON_B 0
+
+// Macro to quickly set the 'on' color:
+#define SET_LED_ON(i) rgb_matrix_set_color((i), LED_ON_R, LED_ON_G, LED_ON_B)
+// Custom code end   ********************************
+
 bool rgb_matrix_indicators_user(void) {
   if (rawhid_state.rgb_control) {
       return false;
@@ -121,9 +144,23 @@ bool rgb_matrix_indicators_user(void) {
     switch (biton32(layer_state)) {
       case 0:
         set_layer_color(0);
+        
+        // Custom code start ********************************
+        if (is_caps_word_on()) {
+          SET_LED_ON(CAPS_WORD_LED_INDEX);
+        }
+        // Custom code end   ********************************
+
         break;
       case 1:
         set_layer_color(1);
+        
+        // Custom code start ********************************
+        if (host_keyboard_led_state().num_lock) {
+          SET_LED_ON(NUM_LOCK_LED_INDEX);
+        }
+        // Custom code end   ********************************   
+
         break;
       case 2:
         set_layer_color(2);
@@ -133,6 +170,16 @@ bool rgb_matrix_indicators_user(void) {
         break;
       case 4:
         set_layer_color(4);
+        
+        // Custom code start ********************************
+        if (host_keyboard_led_state().caps_lock) {
+          SET_LED_ON(CAPS_LOCK_LED_INDEX);
+        }
+        if (host_keyboard_led_state().scroll_lock) {
+          SET_LED_ON(SCROLL_LOCK_LED_INDEX);
+        }
+        // Custom code end   ********************************    
+      
         break;
      default:
         if (rgb_matrix_get_flags() == LED_FLAG_NONE) {
