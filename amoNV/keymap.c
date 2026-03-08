@@ -17,18 +17,18 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(13, KC_E)
-#define DUAL_FUNC_1 LT(8, KC_F10)
-#define DUAL_FUNC_2 LT(9, KC_1)
-#define DUAL_FUNC_3 LT(12, KC_F22)
-#define DUAL_FUNC_4 LT(3, KC_F21)
+#define DUAL_FUNC_0 LT(9, KC_F15)
+#define DUAL_FUNC_1 LT(10, KC_F21)
+#define DUAL_FUNC_2 LT(8, KC_B)
+#define DUAL_FUNC_3 LT(5, KC_E)
+#define DUAL_FUNC_4 LT(4, KC_F16)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_DOT,         
     CW_TOGG,        KC_F,           KC_O,           KC_U,           KC_M,           KC_J,                                           KC_UNDS,        KC_G,           KC_D,           KC_P,           KC_Q,           KC_DELETE,      
-    MO(3),          MT(MOD_LGUI, KC_H),MT(MOD_LALT, KC_A),MT(MOD_LSFT, KC_E),MT(MOD_LCTL, KC_R),KC_X,                                           KC_V,           MT(MOD_RCTL, KC_S),MT(MOD_RSFT, KC_T),MT(MOD_LALT, KC_N),MT(MOD_RGUI, KC_I),KC_TRANSPARENT, 
-    KC_TRANSPARENT, MT(MOD_LCTL, KC_Z),KC_DOT,         KC_COMMA,       KC_L,           KC_W,                                           KC_Y,           KC_C,           KC_K,           KC_B,           KC_BSLS,        KC_F5,          
+    MO(3),          MT(MOD_LGUI, KC_H),MT(MOD_LALT, KC_A),MT(MOD_LSFT, KC_E),MT(MOD_LCTL, KC_R),KC_W,                                           KC_V,           MT(MOD_RCTL, KC_S),MT(MOD_RSFT, KC_T),MT(MOD_LALT, KC_N),MT(MOD_RGUI, KC_I),KC_TRANSPARENT, 
+    KC_TRANSPARENT, MT(MOD_LCTL, KC_Z),KC_DOT,         KC_COMMA,       KC_L,           KC_X,                                           KC_Y,           KC_C,           KC_K,           KC_B,           KC_BSLS,        KC_F5,          
                                                     LT(2, KC_BSPC), LT(4, KC_TAB),                                  LT(4, KC_ENTER),LT(2, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
@@ -194,7 +194,6 @@ bool rgb_matrix_indicators_user(void) {
 
   return true;
 }
-
 
 
 
