@@ -17,11 +17,13 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(14, KC_M)
-#define DUAL_FUNC_1 LT(12, KC_O)
-#define DUAL_FUNC_2 LT(10, KC_0)
-#define DUAL_FUNC_3 LT(11, KC_6)
-#define DUAL_FUNC_4 LT(11, KC_F8)
+#define DUAL_FUNC_0 LT(3, KC_F19)
+#define DUAL_FUNC_1 LT(2, KC_Q)
+#define DUAL_FUNC_2 LT(6, KC_Q)
+#define DUAL_FUNC_3 LT(2, KC_G)
+#define DUAL_FUNC_4 LT(6, KC_3)
+#define DUAL_FUNC_5 LT(14, KC_9)
+#define DUAL_FUNC_6 LT(12, KC_Z)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -48,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_Y),     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, LCTL(KC_Q),     LCTL(KC_D),     LCTL(KC_S),     LCTL(KC_Z),     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, LCTL(KC_X),     LCTL(KC_C),     LCTL(KC_V),     LCTL(KC_F),     KC_TRANSPARENT,                                 KC_TRANSPARENT, LCTL(KC_MINUS), LCTL(KC_0),     LCTL(KC_EQUAL), KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, LCTL(KC_X),     LCTL(KC_C),     LCTL(KC_V),     LCTL(KC_F),     KC_TRANSPARENT,                                 KC_TRANSPARENT, LCTL(KC_MINUS), DUAL_FUNC_5,    DUAL_FUNC_6,    KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_A),     LCTL(KC_H),     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
@@ -267,6 +269,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           register_code16(KC_RIGHT_CTRL);
         } else {
           unregister_code16(KC_RIGHT_CTRL);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_5:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_0));
+        } else {
+          unregister_code16(LCTL(KC_0));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_RIGHT_SHIFT);
+        } else {
+          unregister_code16(KC_RIGHT_SHIFT);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_6:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(LCTL(KC_EQUAL));
+        } else {
+          unregister_code16(LCTL(KC_EQUAL));
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_LEFT_ALT);
+        } else {
+          unregister_code16(KC_LEFT_ALT);
         }  
       }  
       return false;
