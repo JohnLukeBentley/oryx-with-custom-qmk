@@ -17,13 +17,13 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(7, KC_P)
-#define DUAL_FUNC_1 LT(12, KC_U)
-#define DUAL_FUNC_2 LT(14, KC_8)
-#define DUAL_FUNC_3 LT(9, KC_F12)
-#define DUAL_FUNC_4 LT(1, KC_0)
-#define DUAL_FUNC_5 LT(6, KC_F15)
-#define DUAL_FUNC_6 LT(15, KC_U)
+#define DUAL_FUNC_0 LT(4, KC_0)
+#define DUAL_FUNC_1 LT(12, KC_F18)
+#define DUAL_FUNC_2 LT(1, KC_F2)
+#define DUAL_FUNC_3 LT(5, KC_E)
+#define DUAL_FUNC_4 LT(4, KC_F7)
+#define DUAL_FUNC_5 LT(3, KC_D)
+#define DUAL_FUNC_6 LT(6, KC_F8)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -43,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         
     KC_NO,          KC_PERC,        KC_EXLM,        KC_HASH,        KC_DLR,         KC_AT,                                          KC_UNDS,        KC_AMPR,        KC_COLN,        KC_ASTR,        KC_TILD,        KC_TRANSPARENT, 
-    KC_RBRC,        DUAL_FUNC_1,    DUAL_FUNC_2,    MT(MOD_LSFT, KC_SLASH),DUAL_FUNC_3,    KC_GRAVE,                                       KC_PIPE,        DUAL_FUNC_4,    MT(MOD_RSFT, KC_MINUS),MT(MOD_LALT, KC_SCLN),MT(MOD_RGUI, KC_QUOTE),KC_LBRC,        
+    KC_RBRC,        MT(MOD_LGUI, KC_QUOTE),DUAL_FUNC_1,    MT(MOD_LSFT, KC_SLASH),DUAL_FUNC_2,    KC_GRAVE,                                       KC_PIPE,        DUAL_FUNC_3,    MT(MOD_RSFT, KC_MINUS),MT(MOD_LALT, KC_SCLN),DUAL_FUNC_4,    KC_LBRC,        
     KC_TRANSPARENT, KC_CIRC,        KC_PLUS,        KC_RCBR,        KC_RPRN,        ST_MACRO_3,                                     ST_MACRO_4,     KC_LPRN,        KC_LCBR,        KC_EQUAL,       KC_TRANSPARENT, KC_F12,         
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
@@ -262,21 +262,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DUAL_FUNC_1:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
-          register_code16(KC_DQUO);
-        } else {
-          unregister_code16(KC_DQUO);
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(KC_LEFT_GUI);
-        } else {
-          unregister_code16(KC_LEFT_GUI);
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_2:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
           register_code16(KC_LABK);
         } else {
           unregister_code16(KC_LABK);
@@ -289,7 +274,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_3:
+    case DUAL_FUNC_2:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_RABK);
@@ -304,7 +289,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_4:
+    case DUAL_FUNC_3:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_QUES);
@@ -316,6 +301,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           register_code16(KC_RIGHT_CTRL);
         } else {
           unregister_code16(KC_RIGHT_CTRL);
+        }  
+      }  
+      return false;
+    case DUAL_FUNC_4:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(KC_DQUO);
+        } else {
+          unregister_code16(KC_DQUO);
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_RIGHT_GUI);
+        } else {
+          unregister_code16(KC_RIGHT_GUI);
         }  
       }  
       return false;
