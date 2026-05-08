@@ -17,14 +17,14 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(15, KC_C)
-#define DUAL_FUNC_1 LT(13, KC_3)
-#define DUAL_FUNC_2 LT(12, KC_F2)
-#define DUAL_FUNC_3 LT(14, KC_F4)
-#define DUAL_FUNC_4 LT(11, KC_F21)
-#define DUAL_FUNC_5 LT(10, KC_A)
-#define DUAL_FUNC_6 LT(13, KC_7)
-#define DUAL_FUNC_7 LT(7, KC_G)
+#define DUAL_FUNC_0 LT(10, KC_T)
+#define DUAL_FUNC_1 LT(6, KC_C)
+#define DUAL_FUNC_2 LT(6, KC_F8)
+#define DUAL_FUNC_3 LT(10, KC_F13)
+#define DUAL_FUNC_4 LT(1, KC_F19)
+#define DUAL_FUNC_5 LT(4, KC_F18)
+#define DUAL_FUNC_6 LT(2, KC_N)
+#define DUAL_FUNC_7 LT(3, KC_K)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -36,9 +36,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_PERC,        KC_EXLM,        KC_HASH,        KC_DLR,         KC_AT,                                          KC_CIRC,        KC_AMPR,        KC_NO,          KC_NO,          KC_NO,          QK_BOOT,        
-    ST_MACRO_1,     KC_LABK,        KC_RABK,        KC_MINUS,       KC_PLUS,        RSFT(KC_T),                                     LSFT(KC_Z),     KC_KP_7,        KC_KP_8,        KC_KP_9,        ST_MACRO_2,     KC_TRANSPARENT, 
+    ST_MACRO_1,     KC_LABK,        KC_RABK,        KC_COLN,        KC_DLR,         RSFT(KC_T),                                     LSFT(KC_Z),     KC_KP_7,        KC_KP_8,        KC_KP_9,        ST_MACRO_2,     KC_TRANSPARENT, 
     DUAL_FUNC_0,    DUAL_FUNC_1,    MT(MOD_LALT, KC_KP_DOT),MT(MOD_LSFT, KC_COMMA),MT(MOD_LCTL, KC_KP_0),KC_EQUAL,                                       KC_PERC,        MT(MOD_RCTL, KC_KP_4),KC_KP_5,        KC_KP_6,        KC_SLASH,       KC_QUOTE,       
-    KC_NUM,         KC_LPRN,        KC_RPRN,        KC_COLN,        KC_DLR,         RSFT(KC_F),                                     LSFT(KC_C),     KC_KP_1,        KC_KP_2,        KC_KP_3,        KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_NUM,         KC_LPRN,        KC_RPRN,        KC_MINUS,       KC_PLUS,        RSFT(KC_F),                                     LSFT(KC_C),     KC_KP_1,        KC_KP_2,        KC_KP_3,        KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
