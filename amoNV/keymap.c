@@ -18,13 +18,13 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(8, KC_8)
-#define DUAL_FUNC_1 LT(3, KC_H)
-#define DUAL_FUNC_2 LT(11, KC_F5)
-#define DUAL_FUNC_3 LT(2, KC_Z)
-#define DUAL_FUNC_4 LT(2, KC_6)
-#define DUAL_FUNC_5 LT(13, KC_O)
-#define DUAL_FUNC_6 LT(15, KC_7)
+#define DUAL_FUNC_0 LT(4, KC_F20)
+#define DUAL_FUNC_1 LT(1, KC_H)
+#define DUAL_FUNC_2 LT(8, KC_7)
+#define DUAL_FUNC_3 LT(13, KC_0)
+#define DUAL_FUNC_4 LT(15, KC_F2)
+#define DUAL_FUNC_5 LT(12, KC_E)
+#define DUAL_FUNC_6 LT(14, KC_F)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -36,9 +36,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_PERC,        KC_EXLM,        KC_HASH,        KC_DLR,         KC_AT,                                          KC_CIRC,        KC_AMPR,        KC_NO,          KC_NO,          KC_NO,          QK_BOOT,        
-    ST_MACRO_1,     KC_LABK,        KC_RABK,        KC_MINUS,       KC_COLN,        KC_NO,                                          KC_TRANSPARENT, KC_KP_7,        KC_KP_8,        KC_KP_9,        ST_MACRO_2,     ST_MACRO_3,     
-    KC_DQUO,        DUAL_FUNC_0,    MT(MOD_LALT, KC_KP_0),MT(MOD_LSFT, KC_COMMA),MT(MOD_LCTL, KC_KP_DOT),KC_NO,                                          KC_NUM,         MT(MOD_RCTL, KC_KP_4),KC_KP_5,        KC_KP_6,        KC_SLASH,       KC_QUOTE,       
-    KC_TRANSPARENT, KC_LPRN,        KC_RPRN,        KC_PLUS,        KC_EQUAL,       KC_NO,                                          KC_NO,          KC_KP_1,        KC_KP_2,        KC_KP_3,        KC_TRANSPARENT, KC_TRANSPARENT, 
+    ST_MACRO_1,     KC_LABK,        KC_RABK,        KC_COLN,        KC_MINUS,       KC_NO,                                          KC_TRANSPARENT, KC_KP_7,        KC_KP_8,        KC_KP_9,        ST_MACRO_2,     ST_MACRO_3,     
+    KC_DQUO,        DUAL_FUNC_0,    MT(MOD_LALT, KC_KP_DOT),MT(MOD_LSFT, KC_KP_COMMA),MT(MOD_LCTL, KC_KP_0),KC_NO,                                          KC_NUM,         MT(MOD_RCTL, KC_KP_4),KC_KP_5,        KC_KP_6,        KC_SLASH,       KC_QUOTE,       
+    KC_TRANSPARENT, KC_LPRN,        KC_RPRN,        KC_EQUAL,       KC_PLUS,        KC_NO,                                          KC_NO,          KC_KP_1,        KC_KP_2,        KC_KP_3,        KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
