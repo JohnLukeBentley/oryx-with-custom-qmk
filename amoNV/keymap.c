@@ -13,18 +13,23 @@ enum custom_keycodes {
   ST_MACRO_2,
   ST_MACRO_3,
   ST_MACRO_4,
+  ST_MACRO_5,
+  ST_MACRO_6,
+  ST_MACRO_7,
+  ST_MACRO_8,
+  ST_MACRO_9,
 };
 
 
 
-#define DUAL_FUNC_0 LT(8, KC_0)
-#define DUAL_FUNC_1 LT(15, KC_R)
-#define DUAL_FUNC_2 LT(13, KC_F8)
-#define DUAL_FUNC_3 LT(2, KC_F15)
-#define DUAL_FUNC_4 LT(6, KC_F22)
-#define DUAL_FUNC_5 LT(14, KC_8)
-#define DUAL_FUNC_6 LT(8, KC_U)
-#define DUAL_FUNC_7 LT(7, KC_F11)
+#define DUAL_FUNC_0 LT(14, KC_R)
+#define DUAL_FUNC_1 LT(3, KC_T)
+#define DUAL_FUNC_2 LT(7, KC_F11)
+#define DUAL_FUNC_3 LT(9, KC_F4)
+#define DUAL_FUNC_4 LT(8, KC_H)
+#define DUAL_FUNC_5 LT(10, KC_F7)
+#define DUAL_FUNC_6 LT(9, KC_F14)
+#define DUAL_FUNC_7 LT(12, KC_I)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -50,9 +55,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_Q),     KC_TRANSPARENT, LCTL(KC_Y),     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_X),     LCTL(KC_S),     LCTL(KC_Z),     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_X),     LCTL(KC_S),     LCTL(KC_Z),     KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_5,     ST_MACRO_6,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, LCTL(KC_A),     LCTL(KC_C),     LCTL(KC_V),     LCTL(KC_F),     KC_TRANSPARENT,                                 KC_TRANSPARENT, LCTL(KC_MINUS), DUAL_FUNC_6,    DUAL_FUNC_7,    KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_D),     LCTL(KC_H),     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_D),     LCTL(KC_H),     KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_7,     ST_MACRO_8,     ST_MACRO_9,     KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [4] = LAYOUT_voyager(
@@ -242,6 +247,31 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case ST_MACRO_4:
     if (record->event.pressed) {
       SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_5) SS_TAP(X_KP_3) ));
+    }
+    break;
+    case ST_MACRO_5:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_X)SS_DELAY(100)  SS_TAP(X_S)SS_DELAY(100)  SS_TAP(X_L)SS_DELAY(100)  SS_LSFT(SS_TAP(X_SCLN)));
+    }
+    break;
+    case ST_MACRO_6:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_X)SS_DELAY(100)  SS_TAP(X_S)SS_DELAY(100)  SS_TAP(X_D)SS_DELAY(100)  SS_LSFT(SS_TAP(X_SCLN)));
+    }
+    break;
+    case ST_MACRO_7:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_H)SS_DELAY(100)  SS_TAP(X_T)SS_DELAY(100)  SS_TAP(X_T)SS_DELAY(100)  SS_TAP(X_P));
+    }
+    break;
+    case ST_MACRO_8:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_H)SS_DELAY(100)  SS_TAP(X_T)SS_DELAY(100)  SS_TAP(X_M)SS_DELAY(100)  SS_TAP(X_L));
+    }
+    break;
+    case ST_MACRO_9:
+    if (record->event.pressed) {
+      SEND_STRING(SS_TAP(X_X)SS_DELAY(100)  SS_TAP(X_M)SS_DELAY(100)  SS_TAP(X_L));
     }
     break;
 
