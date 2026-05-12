@@ -22,14 +22,14 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(3, KC_W)
-#define DUAL_FUNC_1 LT(5, KC_E)
-#define DUAL_FUNC_2 LT(8, KC_K)
-#define DUAL_FUNC_3 LT(9, KC_1)
-#define DUAL_FUNC_4 LT(14, KC_R)
-#define DUAL_FUNC_5 LT(5, KC_Y)
-#define DUAL_FUNC_6 LT(6, KC_F19)
-#define DUAL_FUNC_7 LT(14, KC_C)
+#define DUAL_FUNC_0 LT(3, KC_4)
+#define DUAL_FUNC_1 LT(15, KC_Y)
+#define DUAL_FUNC_2 LT(8, KC_F5)
+#define DUAL_FUNC_3 LT(6, KC_F14)
+#define DUAL_FUNC_4 LT(12, KC_F2)
+#define DUAL_FUNC_5 LT(13, KC_F3)
+#define DUAL_FUNC_6 LT(13, KC_F6)
+#define DUAL_FUNC_7 LT(10, KC_F11)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -251,12 +251,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_5:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_X)SS_DELAY(100)  SS_TAP(X_S)SS_DELAY(100)  SS_TAP(X_L)SS_DELAY(100)  SS_LSFT(SS_TAP(X_SCLN)));
+      SEND_STRING(SS_TAP(X_X)SS_DELAY(1)  SS_TAP(X_S)SS_DELAY(1)  SS_TAP(X_L)SS_DELAY(1)  SS_LSFT(SS_TAP(X_SCLN)));
     }
     break;
     case ST_MACRO_6:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_X)SS_DELAY(100)  SS_TAP(X_S)SS_DELAY(100)  SS_TAP(X_D)SS_DELAY(100)  SS_LSFT(SS_TAP(X_SCLN)));
+      SEND_STRING(SS_TAP(X_X)SS_DELAY(1)  SS_TAP(X_S)SS_DELAY(1)  SS_TAP(X_D)SS_DELAY(1)  SS_LSFT(SS_TAP(X_SCLN)));
     }
     break;
     case ST_MACRO_7:
@@ -266,12 +266,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_8:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_H)SS_DELAY(100)  SS_TAP(X_T)SS_DELAY(100)  SS_TAP(X_M)SS_DELAY(100)  SS_TAP(X_L));
+      SEND_STRING(SS_TAP(X_H)SS_DELAY(1)  SS_TAP(X_T)SS_DELAY(1)  SS_TAP(X_M)SS_DELAY(1)  SS_TAP(X_L));
     }
     break;
     case ST_MACRO_9:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_X)SS_DELAY(100)  SS_TAP(X_M)SS_DELAY(100)  SS_TAP(X_L));
+      SEND_STRING(SS_TAP(X_X)SS_DELAY(1)  SS_TAP(X_M)SS_DELAY(1)  SS_TAP(X_L));
     }
     break;
 
