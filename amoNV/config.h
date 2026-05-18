@@ -1,5 +1,6 @@
+#define CHORDAL_HOLD
 #undef TAPPING_TERM
-#define TAPPING_TERM 250
+#define TAPPING_TERM 300
 
 #define PERMISSIVE_HOLD
 
@@ -7,7 +8,7 @@
 #define RGB_MATRIX_TIMEOUT 900000
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define SERIAL_NUMBER "amoNV/XbxNpx"
+#define SERIAL_NUMBER "amoNV/Nomae4"
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 2
 
