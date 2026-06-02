@@ -22,15 +22,15 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(11, KC_F20)
-#define DUAL_FUNC_1 LT(12, KC_F10)
-#define DUAL_FUNC_2 LT(12, KC_6)
-#define DUAL_FUNC_3 LT(15, KC_F13)
-#define DUAL_FUNC_4 LT(6, KC_H)
-#define DUAL_FUNC_5 LT(6, KC_4)
-#define DUAL_FUNC_6 LT(4, KC_F6)
-#define DUAL_FUNC_7 LT(12, KC_D)
-#define DUAL_FUNC_8 LT(6, KC_F12)
+#define DUAL_FUNC_0 LT(15, KC_F18)
+#define DUAL_FUNC_1 LT(8, KC_0)
+#define DUAL_FUNC_2 LT(6, KC_F22)
+#define DUAL_FUNC_3 LT(13, KC_F22)
+#define DUAL_FUNC_4 LT(9, KC_C)
+#define DUAL_FUNC_5 LT(4, KC_R)
+#define DUAL_FUNC_6 LT(10, KC_F14)
+#define DUAL_FUNC_7 LT(8, KC_1)
+#define DUAL_FUNC_8 LT(6, KC_7)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -245,9 +245,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       } else {
         if (record->event.pressed) {
-          register_code16(LSFT(KC_F10));
+          register_code16(LSFT(KC_K));
         } else {
-          unregister_code16(LSFT(KC_F10));
+          unregister_code16(LSFT(KC_K));
         }  
       }  
       return false;
