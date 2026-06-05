@@ -22,21 +22,21 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(3, KC_F12)
-#define DUAL_FUNC_1 LT(11, KC_F9)
-#define DUAL_FUNC_2 LT(14, KC_F6)
-#define DUAL_FUNC_3 LT(8, KC_F21)
-#define DUAL_FUNC_4 LT(5, KC_O)
-#define DUAL_FUNC_5 LT(10, KC_B)
-#define DUAL_FUNC_6 LT(5, KC_U)
-#define DUAL_FUNC_7 LT(7, KC_F13)
+#define DUAL_FUNC_0 LT(14, KC_F20)
+#define DUAL_FUNC_1 LT(3, KC_F12)
+#define DUAL_FUNC_2 LT(2, KC_F17)
+#define DUAL_FUNC_3 LT(13, KC_9)
+#define DUAL_FUNC_4 LT(2, KC_F23)
+#define DUAL_FUNC_5 LT(12, KC_F10)
+#define DUAL_FUNC_6 LT(10, KC_0)
+#define DUAL_FUNC_7 LT(8, KC_F21)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_DOT,         
+    KC_LEFT_CTRL,   KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_DOT,         
     CW_TOGG,        KC_F,           KC_O,           KC_U,           KC_M,           KC_K,                                           KC_UNDS,        KC_G,           KC_D,           KC_P,           KC_Q,           KC_DELETE,      
     MO(3),          MT(MOD_LGUI, KC_H),MT(MOD_LALT, KC_A),MT(MOD_LSFT, KC_E),MT(MOD_LCTL, KC_R),KC_W,                                           KC_Y,           MT(MOD_RCTL, KC_S),MT(MOD_RSFT, KC_T),MT(MOD_LALT, KC_N),MT(MOD_RGUI, KC_I),KC_F11,         
-    KC_LEFT_CTRL,   KC_Z,           KC_DOT,         KC_COMMA,       KC_L,           KC_X,                                           KC_J,           KC_C,           KC_V,           KC_B,           ST_MACRO_0,     KC_F5,          
+    KC_ESCAPE,      KC_Z,           KC_DOT,         KC_COMMA,       KC_L,           KC_X,                                           KC_J,           KC_C,           KC_V,           KC_B,           ST_MACRO_0,     KC_F5,          
                                                     LT(2, KC_BSPC), LT(4, KC_TAB),                                  LT(4, KC_ENTER),LT(2, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RGB_TOG,        RGB_MODE_FORWARD,RGB_SPD,        RGB_SLD,        RGB_SPI,        TOGGLE_LAYER_COLOR,                                KC_CAPS,        KC_PSCR,        KC_SCRL,        KC_PAUSE,       QK_DYNAMIC_TAPPING_TERM_PRINT,QK_DYNAMIC_TAPPING_TERM_UP,
     RGB_SAI,        RGB_HUI,        KC_AUDIO_VOL_DOWN,KC_AUDIO_MUTE,  KC_AUDIO_VOL_UP,RGB_VAI,                                        KC_NO,          KC_HOME,        KC_NO,          KC_END,         KC_PAGE_UP,     QK_DYNAMIC_TAPPING_TERM_DOWN,
     KC_NO,          MT(MOD_LGUI, KC_MEDIA_PREV_TRACK),MT(MOD_LALT, KC_J),MT(MOD_LSFT, KC_MEDIA_PLAY_PAUSE),MT(MOD_LCTL, KC_L),KC_MEDIA_NEXT_TRACK,                                KC_NO,          KC_LEFT,        KC_UP,          KC_RIGHT,       KC_PGDN,        KC_NO,          
-    RGB_SAD,        RGB_HUI,        KC_COMMA,       HSV_0_255_255,  KC_DOT,         RGB_VAD,                                        KC_NO,          KC_INSERT,      KC_DOWN,        LSFT(KC_F10),   KC_NO,          KC_NO,          
+    RGB_SAD,        RGB_HUI,        KC_COMMA,       HSV_0_255_255,  KC_DOT,         RGB_VAD,                                        KC_NO,          KC_INSERT,      KC_DOWN,        LSFT(KC_F10),   MT(MOD_LCTL, KC_C),KC_NO,          
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
@@ -100,7 +100,7 @@ void keyboard_post_init_user(void) {
 }
 
 const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
-    [0] = { {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {0,0,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {206,255,253}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {74,251,140}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {219,255,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {74,251,140}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {158,218,204}, {74,251,140}, {163,187,255}, {163,187,255} },
+    [0] = { {74,251,140}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {0,0,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {206,255,253}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {74,251,140}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {219,255,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {74,251,140}, {163,187,255}, {163,187,255}, {163,187,255}, {163,187,255}, {158,218,204}, {74,251,140}, {163,187,255}, {163,187,255} },
 
     [1] = { {0,218,204}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {158,218,204}, {206,255,253}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,0,0}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,0,255}, {0,0,0}, {158,218,204}, {0,0,0}, {0,0,0}, {41,197,255}, {219,255,255}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {219,255,255}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {0,218,204}, {74,251,140}, {0,218,204}, {0,218,204} },
 
