@@ -137,7 +137,7 @@ void set_layer_color(int layer) {
 //              24     50?
 //               25   51? 
 
-#define CAPS_WORD_LED_INDEX 06
+#define CAPS_WORD_LED_INDEX 00
 #define CAPS_LOCK_LED_INDEX 26
 #define SCROLL_LOCK_LED_INDEX 28
 #define NUM_LOCK_LED_INDEX 26
