@@ -134,13 +134,13 @@ void set_layer_color(int layer) {
 // 06 07 08 09 10 11  32 33 34 35 36 37
 // 12 13 14 15 16 17  38 39 40 41 42 43
 // 18 19 20 21 22 23  44 45 46 47 48 49
-//              24     50?
-//               25   51? 
+//              24     51
+//               25   50 
 
 #define CAPS_WORD_MAIN_LAYER_LED_INDEX_LEFT_HOME 15
 #define CAPS_WORD_MAIN_LAYER_LED_INDEX_LEFT_THUMB 25
 #define CAPS_WORD_MAIN_LAYER_LED_INDEX_RIGHT_HOME 40
-#define CAPS_WORD_MAIN_LAYER_LED_INDEX_RIGHT_THUMB 51
+#define CAPS_WORD_MAIN_LAYER_LED_INDEX_RIGHT_THUMB 50
 #define CAPS_WORD_NAVMELI_LAYER_LED_INDEX 32
 #define CAPS_LOCK_LED_INDEX 26
 #define SCROLL_LOCK_LED_INDEX 28
@@ -170,7 +170,6 @@ bool rgb_matrix_indicators_user(void) {
           SET_LED_ON(CAPS_WORD_MAIN_LAYER_LED_INDEX_LEFT_THUMB);
           SET_LED_ON(CAPS_WORD_MAIN_LAYER_LED_INDEX_RIGHT_HOME);
           SET_LED_ON(CAPS_WORD_MAIN_LAYER_LED_INDEX_RIGHT_THUMB);
-          SET_LED_ON(CAPS_WORD_NAVMELI_LAYER_LED_INDEX);
         }
         // Custom code end   ********************************
 
