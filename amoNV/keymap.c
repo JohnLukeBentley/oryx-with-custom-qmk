@@ -137,7 +137,11 @@ void set_layer_color(int layer) {
 //              24     50?
 //               25   51? 
 
-#define CAPS_WORD_LED_INDEX 00
+#define CAPS_WORD_MAIN_LAYER_LED_INDEX_LEFT_HOME 15
+#define CAPS_WORD_MAIN_LAYER_LED_INDEX_LEFT_THUMB 25
+#define CAPS_WORD_MAIN_LAYER_LED_INDEX_RIGHT_HOME 40
+#define CAPS_WORD_MAIN_LAYER_LED_INDEX_RIGHT_THUMB 51
+#define CAPS_WORD_NAVMELI_LAYER_LED_INDEX 32
 #define CAPS_LOCK_LED_INDEX 26
 #define SCROLL_LOCK_LED_INDEX 28
 #define NUM_LOCK_LED_INDEX 26
@@ -162,7 +166,11 @@ bool rgb_matrix_indicators_user(void) {
         
         // Custom code start ********************************
         if (is_caps_word_on()) {
-          SET_LED_ON(CAPS_WORD_LED_INDEX);
+          SET_LED_ON(CAPS_WORD_MAIN_LAYER_LED_INDEX_LEFT_HOME);
+          SET_LED_ON(CAPS_WORD_MAIN_LAYER_LED_INDEX_LEFT_THUMB);
+          SET_LED_ON(CAPS_WORD_MAIN_LAYER_LED_INDEX_RIGHT_HOME);
+          SET_LED_ON(CAPS_WORD_MAIN_LAYER_LED_INDEX_RIGHT_THUMB);
+          SET_LED_ON(CAPS_WORD_NAVMELI_LAYER_LED_INDEX);
         }
         // Custom code end   ********************************
 
@@ -192,6 +200,9 @@ bool rgb_matrix_indicators_user(void) {
         }
         if (host_keyboard_led_state().scroll_lock) {
           SET_LED_ON(SCROLL_LOCK_LED_INDEX);
+        }
+        if (is_caps_word_on()) {
+          SET_LED_ON(CAPS_WORD_NAVMELI_LAYER_LED_INDEX);
         }
         // Custom code end   ********************************    
       
