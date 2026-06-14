@@ -22,13 +22,13 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(14, KC_A)
-#define DUAL_FUNC_1 LT(13, KC_8)
-#define DUAL_FUNC_2 LT(2, KC_S)
-#define DUAL_FUNC_3 LT(10, KC_F17)
-#define DUAL_FUNC_4 LT(15, KC_1)
-#define DUAL_FUNC_5 LT(11, KC_P)
-#define DUAL_FUNC_6 LT(14, KC_F16)
+#define DUAL_FUNC_0 LT(2, KC_Q)
+#define DUAL_FUNC_1 LT(1, KC_G)
+#define DUAL_FUNC_2 LT(10, KC_F20)
+#define DUAL_FUNC_3 LT(6, KC_L)
+#define DUAL_FUNC_4 LT(14, KC_F16)
+#define DUAL_FUNC_5 LT(2, KC_H)
+#define DUAL_FUNC_6 LT(13, KC_B)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, LCTL(KC_Y),     LCTL(KC_Q),     KC_TRANSPARENT, LCTL(KC_H),     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, LCTL(KC_Z),     LCTL(KC_X),     LCTL(KC_S),     LCTL(KC_F),     KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_5,     ST_MACRO_6,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, LCTL(KC_A),     LCTL(KC_C),     LCTL(LSFT(KC_V)),LCTL(LSFT(KC_Z)),LCTL(KC_W),                                     KC_TRANSPARENT, LCTL(KC_MINUS), DUAL_FUNC_5,    DUAL_FUNC_6,    KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, LCTL(KC_A),     LCTL(KC_C),     LSFT(RCTL(KC_V)),LCTL(LSFT(KC_Z)),LCTL(KC_W),                                     KC_TRANSPARENT, LCTL(KC_MINUS), DUAL_FUNC_5,    DUAL_FUNC_6,    KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_V),     LCTL(KC_D),     KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_7,     ST_MACRO_8,     ST_MACRO_9,     KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
