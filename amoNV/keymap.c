@@ -23,13 +23,13 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(11, KC_S)
-#define DUAL_FUNC_1 LT(13, KC_F24)
-#define DUAL_FUNC_2 LT(15, KC_T)
-#define DUAL_FUNC_3 LT(4, KC_F9)
-#define DUAL_FUNC_4 LT(7, KC_F7)
-#define DUAL_FUNC_5 LT(1, KC_3)
-#define DUAL_FUNC_6 LT(3, KC_F6)
+#define DUAL_FUNC_0 LT(8, KC_G)
+#define DUAL_FUNC_1 LT(4, KC_M)
+#define DUAL_FUNC_2 LT(14, KC_E)
+#define DUAL_FUNC_3 LT(15, KC_Y)
+#define DUAL_FUNC_4 LT(5, KC_F16)
+#define DUAL_FUNC_5 LT(15, KC_F12)
+#define DUAL_FUNC_6 LT(15, KC_4)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -268,7 +268,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_5:
     if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_LEFT_CTRL)SS_DELAY(10)  SS_TAP(X_LEFT_SHIFT)SS_DELAY(10)  SS_TAP(X_V));
+      SEND_STRING(SS_LCTL(SS_LSFT(SS_TAP(X_V))));
     }
     break;
     case ST_MACRO_6:
