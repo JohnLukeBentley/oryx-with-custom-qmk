@@ -155,7 +155,7 @@ void set_layer_color(int layer) {
 #define CAPS_WORD_NAVMELI_LAYER_LED_INDEX 32
 #define CAPS_LOCK_LED_INDEX 26
 #define SCROLL_LOCK_LED_INDEX 28
-#define NUM_LOCK_LED_INDEX 26
+#define NUM_LOCK_LED_INDEX 05
 
 // Single green color constant:
 #define LED_ON_R 0
