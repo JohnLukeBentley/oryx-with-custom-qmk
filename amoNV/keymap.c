@@ -31,14 +31,14 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(14, KC_F17)
-#define DUAL_FUNC_1 LT(15, KC_F7)
-#define DUAL_FUNC_2 LT(8, KC_W)
-#define DUAL_FUNC_3 LT(9, KC_F19)
-#define DUAL_FUNC_4 LT(3, KC_F13)
-#define DUAL_FUNC_5 LT(1, KC_4)
-#define DUAL_FUNC_6 LT(2, KC_F16)
-#define DUAL_FUNC_7 LT(13, KC_F13)
+#define DUAL_FUNC_0 LT(10, KC_W)
+#define DUAL_FUNC_1 LT(10, KC_F2)
+#define DUAL_FUNC_2 LT(4, KC_4)
+#define DUAL_FUNC_3 LT(1, KC_0)
+#define DUAL_FUNC_4 LT(12, KC_2)
+#define DUAL_FUNC_5 LT(3, KC_B)
+#define DUAL_FUNC_6 LT(12, KC_F1)
+#define DUAL_FUNC_7 LT(7, KC_F20)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -259,12 +259,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_1:
     if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_7) SS_TAP(X_KP_7) ));
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_1) SS_TAP(X_KP_6) ));
     }
     break;
     case ST_MACRO_2:
     if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_2) SS_TAP(X_KP_1) SS_TAP(X_KP_6) ));
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_7) SS_TAP(X_KP_7) ));
     }
     break;
     case ST_MACRO_3:
@@ -284,22 +284,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     break;
     case ST_MACRO_6:
     if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_7) SS_TAP(X_KP_8) ));
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_7) SS_TAP(X_KP_9) ));
     }
     break;
     case ST_MACRO_7:
     if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_7) SS_TAP(X_KP_9) ));
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_7) SS_TAP(X_KP_8) ));
     }
     break;
     case ST_MACRO_8:
     if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_8) SS_TAP(X_KP_8) ));
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_8) SS_TAP(X_KP_9) ));
     }
     break;
     case ST_MACRO_9:
     if (record->event.pressed) {
-      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_8) SS_TAP(X_KP_9) ));
+      SEND_STRING(SS_LALT(SS_TAP(X_KP_0) SS_TAP(X_KP_1) SS_TAP(X_KP_8) SS_TAP(X_KP_8) ));
     }
     break;
     case ST_MACRO_10:
