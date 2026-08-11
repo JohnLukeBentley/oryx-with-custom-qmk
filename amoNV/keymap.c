@@ -31,14 +31,12 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(10, KC_W)
-#define DUAL_FUNC_1 LT(10, KC_F2)
-#define DUAL_FUNC_2 LT(4, KC_4)
-#define DUAL_FUNC_3 LT(1, KC_0)
-#define DUAL_FUNC_4 LT(12, KC_2)
-#define DUAL_FUNC_5 LT(3, KC_B)
-#define DUAL_FUNC_6 LT(12, KC_F1)
-#define DUAL_FUNC_7 LT(7, KC_F20)
+#define DUAL_FUNC_0 LT(12, KC_M)
+#define DUAL_FUNC_1 LT(3, KC_F2)
+#define DUAL_FUNC_2 LT(14, KC_F19)
+#define DUAL_FUNC_3 LT(13, KC_I)
+#define DUAL_FUNC_4 LT(6, KC_F2)
+#define DUAL_FUNC_5 LT(3, KC_F21)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
@@ -51,21 +49,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_voyager(
     KC_NO,          ST_MACRO_1,     ST_MACRO_2,     ST_MACRO_3,     ST_MACRO_4,     KC_NUM,                                         ST_MACRO_6,     ST_MACRO_7,     ST_MACRO_8,     ST_MACRO_9,     ST_MACRO_10,    QK_BOOT,        
     KC_TRANSPARENT, KC_PERC,        KC_ASTR,        KC_SLASH,       KC_DLR,         ST_MACRO_5,                                     KC_CALCULATOR,  KC_KP_7,        KC_KP_8,        KC_KP_9,        KC_E,           KC_TRANSPARENT, 
-    DUAL_FUNC_0,    MT(MOD_LGUI, KC_MINUS),MT(MOD_LALT, KC_DOT),MT(MOD_LSFT, KC_COMMA),MT(MOD_LCTL, KC_KP_0),RSFT(KC_T),                                     LSFT(KC_Z),     MT(MOD_RCTL, KC_KP_4),MT(MOD_RSFT, KC_KP_5),MT(MOD_LALT, KC_KP_6),DUAL_FUNC_1,    KC_QUOTE,       
+    DUAL_FUNC_0,    KC_MINUS,       MT(MOD_LALT, KC_DOT),MT(MOD_LSFT, KC_COMMA),KC_KP_0,        RSFT(KC_T),                                     LSFT(KC_Z),     KC_KP_4,        MT(MOD_RSFT, KC_KP_5),KC_KP_6,        KC_PLUS,        KC_QUOTE,       
     KC_TRANSPARENT, KC_CIRC,        KC_EQUAL,       KC_COLN,        KC_X,           RSFT(KC_F),                                     LSFT(KC_C),     KC_KP_1,        KC_KP_2,        KC_KP_3,        KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F4,          KC_F5,                                          KC_F6,          KC_F7,          KC_F8,          KC_F9,          KC_F10,         KC_F11,         
     KC_TRANSPARENT, KC_PERC,        KC_EXLM,        KC_HASH,        KC_DLR,         KC_AT,                                          KC_BSLS,        KC_AMPR,        KC_COLN,        KC_ASTR,        KC_TILD,        KC_TRANSPARENT, 
-    KC_RBRC,        DUAL_FUNC_2,    DUAL_FUNC_3,    MT(MOD_LSFT, KC_SLASH),DUAL_FUNC_4,    KC_GRAVE,                                       KC_PIPE,        DUAL_FUNC_5,    MT(MOD_RSFT, KC_MINUS),MT(MOD_LALT, KC_SCLN),MT(MOD_RGUI, KC_QUOTE),KC_LBRC,        
+    KC_RBRC,        KC_TRANSPARENT, DUAL_FUNC_1,    MT(MOD_LSFT, KC_SLASH),DUAL_FUNC_2,    KC_GRAVE,                                       KC_PIPE,        DUAL_FUNC_3,    MT(MOD_RSFT, KC_MINUS),MT(MOD_LALT, KC_SCLN),MT(MOD_RGUI, KC_QUOTE),KC_LBRC,        
     KC_TRANSPARENT, KC_CIRC,        KC_EQUAL,       KC_RCBR,        KC_RPRN,        ST_MACRO_11,                                    ST_MACRO_12,    KC_LPRN,        KC_LCBR,        KC_PLUS,        KC_TRANSPARENT, KC_F12,         
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
     KC_TRANSPARENT, LCTL(KC_Y),     LCTL(KC_Q),     KC_TRANSPARENT, LCTL(KC_H),     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, LCTL(KC_Z),     LCTL(KC_X),     LCTL(KC_S),     LCTL(KC_F),     KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_14,    ST_MACRO_15,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, LCTL(KC_A),     LCTL(KC_C),     ST_MACRO_13,    LCTL(LSFT(KC_Z)),LCTL(KC_W),                                     KC_TRANSPARENT, LCTL(KC_MINUS), DUAL_FUNC_6,    DUAL_FUNC_7,    KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, LCTL(KC_A),     LCTL(KC_C),     ST_MACRO_13,    LCTL(LSFT(KC_Z)),LCTL(KC_W),                                     KC_TRANSPARENT, LCTL(KC_MINUS), DUAL_FUNC_4,    DUAL_FUNC_5,    KC_TRANSPARENT, KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, LCTL(KC_V),     LCTL(KC_D),     KC_TRANSPARENT,                                 KC_TRANSPARENT, ST_MACRO_16,    ST_MACRO_17,    ST_MACRO_18,    KC_TRANSPARENT, KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
@@ -309,36 +307,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DUAL_FUNC_1:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
-          register_code16(KC_PLUS);
-        } else {
-          unregister_code16(KC_PLUS);
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(KC_RIGHT_GUI);
-        } else {
-          unregister_code16(KC_RIGHT_GUI);
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_2:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(KC_DQUO);
-        } else {
-          unregister_code16(KC_DQUO);
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(KC_LEFT_GUI);
-        } else {
-          unregister_code16(KC_LEFT_GUI);
-        }  
-      }  
-      return false;
-    case DUAL_FUNC_3:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
           register_code16(KC_LABK);
         } else {
           unregister_code16(KC_LABK);
@@ -351,7 +319,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_4:
+    case DUAL_FUNC_2:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_RABK);
@@ -366,7 +334,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_5:
+    case DUAL_FUNC_3:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_QUES);
@@ -381,7 +349,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_6:
+    case DUAL_FUNC_4:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(LCTL(KC_0));
@@ -396,7 +364,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }  
       }  
       return false;
-    case DUAL_FUNC_7:
+    case DUAL_FUNC_5:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(LCTL(KC_EQUAL));
